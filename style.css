@@ -1,6 +1,6 @@
 
 
-#titulogrande{color: rgb(13, 255, 0); padding: 70px;}
+#titulogrande{display:block;background-image: src='https://images.app.goo.gl/4QokddEutpM8sPb69' ;color:black;margin: 70px 70px ;}
 
 .elemento{ margin:50px 10px}
 
