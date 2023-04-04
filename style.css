@@ -1,14 +1,36 @@
-* { border: solid red; background-color: rgb(205, 166, 50);}
+
 
 #titulogrande{color: rgb(13, 255, 0); padding: 70px;}
 
 .elemento{ margin:50px 10px}
 
-div.fixed {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    border: 3px solid #216cad;
-    background-color: antiquewhite;
+
+/*BARRA MENU*/
+  .active {
+    background-color: #04AA6D;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
   }
