@@ -1,8 +1,12 @@
 
 
-#titulogrande{margin: 100px;display:inline;background-image: src='https://images.app.goo.gl/4QokddEutpM8sPb69' ;color:black;}
-
+#titulogrande{margin: 0px;font: 'Lucida Handwriting';display:block;background-image: url("./fotos/FOTO TIT.png");background-size: cover;color:lightgray;font-size: 100px; padding-left: 500px;padding-top: 200px; padding-bottom: 200px;}
+/*CARRUSEL E SLO DE LAS FOTOS */
 .elemento{ margin:50px 10px}
+
+*{background-color:  #333 ;}
+
+
 
 
 /*BARRA MENU*/
@@ -10,16 +14,18 @@
     background-color: #04AA6D;
   }
 
-  ul {
+  #navul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    
   }
   
-  li {
+  .navli {
     float: left;
+    background-color: #333
   }
   
   li a {
@@ -28,9 +34,22 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    background-color: #333
   }
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
     background-color: #111;
+  }
+
+
+  #contacto {
+    text-decoration: none;
+    color:white
+  }
+
+  #CONT{color:white}
+
+  #fotolocal{ 
+    width: 100%;
   }
