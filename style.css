@@ -9,6 +9,7 @@
 
 
 
+
 /*BARRA MENU*/
   .active {
     background-color: #04AA6D;
@@ -44,12 +45,18 @@
 
 
   #contacto {
+    
     text-decoration: none;
     color:white
   }
 
-  #CONT{color:white}
+
+#CONT{
+  color: white;
+}
 
   #fotolocal{ 
     width: 100%;
   }
+
+
