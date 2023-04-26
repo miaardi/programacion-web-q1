@@ -1,8 +1,8 @@
 
 
-#titulogrande{margin: 0px;font: 'Lucida Handwriting';display:block;background-image: url("./fotos/FOTO TIT.png");background-size: cover;color:lightgray;font-size: 100px; padding-left: 500px;padding-top: 200px; padding-bottom: 200px;}
+#titulogrande{margin: 0vh;font: 'Lucida Handwriting';display:block;background-image: url("./fotos/FOTO TIT.png");background-size: cover;color:lightgray;font-size: 15vh; padding-left: 60vh;padding-top: 30vh ; padding-bottom: 30vh;}
 /*CARRUSEL E SLO DE LAS FOTOS */
-.elemento{ margin:50px 10px}
+.elemento{ margin:50vh 10vw}
 
 *{background-color:  #333 ;}
 
@@ -33,7 +33,7 @@
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 2vh 5vw;
     text-decoration: none;
     background-color: #333
   }
@@ -55,8 +55,40 @@
   color: white;
 }
 
-  #fotolocal{ 
-    width: 100%;
+
+  .location-container {
+    display: flex;
+    flex-wrap: wrap;
+    
+    background-color: white;
+    justify-content: space-around;
+  }
+  
+  .location {
+    
+    margin-bottom: 30vh;
+    background-color: white;
+  }
+  
+  .map {
+    
+    height: 2vh;
+    width: 2vw;
+    background-color: white;
+    padding-right: 60vh;
+    padding-top: 3vh;
+    
   }
 
+  .ubicacion {
+    background-color: white;
+    font: 'Lucida Handwriting';
+    font-size: 3vh;
+    
+    
+  }
 
+.imagen {
+  height: 30vh;
+    width: 40vw;
+}
