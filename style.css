@@ -44,7 +44,15 @@ h2 {
   font-weight: bold;
   color:#333;
 }
-/* Estilos para los menús */
+
+.buy-button {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 2vh 5vw;
+  text-decoration: none;
+  background-color: #333
+}
 
 
 
@@ -79,9 +87,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-#agregaralcarrito{
-  color:#f5f5f5
-}
+
 
 
 #titulogrande{text-align: center;margin: 0vh;font: 'Lucida Handwriting';display:block;background-image: url("./fotos/FOTO TIT.png");background-size: cover;color:lightgray;font-size: 15vh; padding-top: 30vh ; padding-bottom: 30vh;}
@@ -178,17 +184,3 @@ h2 {
     width: 40vw;
 }
 
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.cart-item button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
