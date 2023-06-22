@@ -1,59 +1,62 @@
-// Menu objects
-const menu1 = {
-    name: "Menu 1",
-    description: "This is the description for Menu 1.",
-    price: 1000
- };
+const cartInfo = document.querySelector('.cart-product');
+const rowProduct = document.querySelector('.row-product');
 
- const menu2 = {
-    name: "Menu 2",
-    description: "This is the description for Menu 2.",
-    price: 1500
- };
+// Lista de todos los contenedores de productos
+const productsList = document.querySelector('.container-items');
 
- // Shopping cart array
- let cart = [];
+// Variable de arreglos de Productos
+let allProducts = [];
 
- // Function to add menu to the cart
- function addToCart(menu) {
-    cart.push(menu);
-    console.log(`Added ${menu.name} to the cart.`);
- }
+const valorTotal = document.querySelector('.total-pagar');
 
- // Function to display cart items
- function showCart() {
-    const cartItemsDiv = document.getElementById("cart-items");
-    cartItemsDiv.innerHTML = "";
+const countProducts = document.querySelector('#contador-productos');
 
-    for (let i = 0; i < cart.length; i++) {
-       const item = cart[i];
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.cart-total');
 
-       const itemDiv = document.createElement("div");
-       itemDiv.innerHTML = `
-          <h3>${item.name}</h3>
-          <p>${item.description}</p>
-          <p>Price: $${item.price}</p>
-          <button onclick="removeFromCart(${i})">Remove</button>
-       `;
+productsList.addEventListener('click', e => {
+	if (e.target.classList.contains('btn-add-cart')) {
+		const product = e.target.parentElement;
 
-       cartItemsDiv.appendChild(itemDiv);
-    }
+		const infoProduct = {
+			quantity: 1,
+			title: product.querySelector('h2').textContent,
+			price: product.querySelector('p').textContent,
+		};
 
-    cartItemsDiv.style.display = "block";
- }
+		const exits = allProducts.some(
+			product => product.title === infoProduct.title
+		);
 
- // Function to remove item from cart
- function removeFromCart(index) {
-    const removedItem = cart.splice(index, 1)[0];
-    console.log(`Removed ${removedItem.name} from the cart.`);
+		if (exits) {
+			const products = allProducts.map(product => {
+				if (product.title === infoProduct.title) {
+					product.quantity++;
+					return product;
+				} else {
+					return product;
+				}
+			});
+			allProducts = [...products];
+		} else {
+			allProducts = [...allProducts, infoProduct];
+		}
 
-    showCart();
- }
+		showHTML();
+	}
+});
 
- // Event listener for cart button
- const cartButton = document.getElementById("cart-button");
- cartButton.addEventListener("click", showCart);
+rowProduct.addEventListener('click', e => {
+	if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
 
- // Test adding menus to the cart
- addToCart(menu1);
- addToCart(menu2);
+		allProducts = allProducts.filter(
+			product => product.title !== title
+		);
+
+		console.log(allProducts);
+
+		showHTML();
+	}
+});
