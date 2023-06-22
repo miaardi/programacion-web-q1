@@ -1,49 +1,59 @@
-function agregarAlCarrito(precio) {
-    cartItems.push({ precio: precio });
-    total += precio;
-    document.getElementById("cart-total").textContent = "Total: $" + total;
-  }
+// Menu objects
+const menu1 = {
+    name: "Menu 1",
+    description: "This is the description for Menu 1.",
+    price: 1000
+ };
 
-  function mostrarCarrito() {
-    const cartSection = document.getElementById("cart");
-    cartSection.innerHTML = ""; // Clear previous cart items
-  
-    for (let i = 0; i < cartItems.length; i++) {
-      const item = cartItems[i];
-      const menuNumber = i + 1;
-  
-      const cartItem = document.createElement("div");
-      cartItem.classList.add("cart-item");
-  
-      const itemName = document.createElement("p");
-      itemName.textContent = "Menú " + menuNumber;
-  
-      const itemPrice = document.createElement("p");
-      itemPrice.textContent = "Precio: $" + item.precio;
-  
-      const removeButton = document.createElement("button");
-      removeButton.textContent = "Borrar";
-      removeButton.addEventListener("click", () => {
-        cartItems.splice(i, 1); // Remove item from cartItems array
-        total -= item.precio;
-        document.getElementById("cart-total").textContent = "Total: $" + total;
-        mostrarCarrito(); // Update the displayed cart items
-      });
-  
-      cartItem.appendChild(itemName);
-      cartItem.appendChild(itemPrice);
-      cartItem.appendChild(removeButton);
-  
-      cartSection.appendChild(cartItem);
+ const menu2 = {
+    name: "Menu 2",
+    description: "This is the description for Menu 2.",
+    price: 1500
+ };
+
+ // Shopping cart array
+ let cart = [];
+
+ // Function to add menu to the cart
+ function addToCart(menu) {
+    cart.push(menu);
+    console.log(`Added ${menu.name} to the cart.`);
+ }
+
+ // Function to display cart items
+ function showCart() {
+    const cartItemsDiv = document.getElementById("cart-items");
+    cartItemsDiv.innerHTML = "";
+
+    for (let i = 0; i < cart.length; i++) {
+       const item = cart[i];
+
+       const itemDiv = document.createElement("div");
+       itemDiv.innerHTML = `
+          <h3>${item.name}</h3>
+          <p>${item.description}</p>
+          <p>Price: $${item.price}</p>
+          <button onclick="removeFromCart(${i})">Remove</button>
+       `;
+
+       cartItemsDiv.appendChild(itemDiv);
     }
-  
-    const finalizarCompraButton = document.createElement("button");
-    finalizarCompraButton.textContent = "Finalizar compra";
-    finalizarCompraButton.addEventListener("click", finalizarCompra);
-  
-    cartSection.appendChild(finalizarCompraButton);
-  }
 
-  function finalizarCompra() {
-    const email = prompt("Por favor, ingrese su dirección de correo electrónico:");
-    const emailBody = generate}
+    cartItemsDiv.style.display = "block";
+ }
+
+ // Function to remove item from cart
+ function removeFromCart(index) {
+    const removedItem = cart.splice(index, 1)[0];
+    console.log(`Removed ${removedItem.name} from the cart.`);
+
+    showCart();
+ }
+
+ // Event listener for cart button
+ const cartButton = document.getElementById("cart-button");
+ cartButton.addEventListener("click", showCart);
+
+ // Test adding menus to the cart
+ addToCart(menu1);
+ addToCart(menu2);
