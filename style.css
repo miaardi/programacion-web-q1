@@ -11,81 +11,53 @@ h2 {
   color: #f5f5f5;
 }
 
+
+.scroll{
+  background-color: aliceblue;
+  box-shadow: .1rem .2rem .3rem #333;
+}
+.scroll img{
+  filter: invert(15%);
+}           
+.scroll h1{
+  color: #141C29;
+}
+
 /* Estilos para el carrito de compras */
-.container-cart-products{
-  position: absolute;
-  top: 50px;
-  right: 0;
-
-  background-color: #fff;
-  width: 400px;
-  z-index: 1;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-  border-radius: 10px;
-  
-}
-
-.cart-product{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px;
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
-
-}
-
-.info-cart-product{
-  display: flex;
-  justify-content: space-between;
-  flex: 0.8;
-}
-
-.titulo-producto-carrito{
-  font-size: 20px;
-}
-
-.precio-producto-carrito{
-  font-weight: 700;
-  font-size: 20px;
-  margin-left: 10px;
-}
-
-.cantidad-producto-carrito{
-  font-weight: 400;
-  font-size: 20px;
-}
-
-.icon-close{
-  width: 25px;
-  height: 25px;
-}
-
-.icon-close:hover{
-  stroke: red;
-  cursor: pointer;
-}
-
-.cart-total{
+.informacion{
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
-  gap: 20px;
+  flex-direction: column;
+  gap:15px;
 }
-
-.cart-total h3{
+.informacion>p:first-child{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+}
+.informacion .precio {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
 }
-
-.total-pagar{
-  font-size: 20px;
-  font-weight: 900;
+.informacion .precio span{
+  font-size: 17px;
+  font-weight: 300;
 }
+.informacion button{
+  background-color: #263143;
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
 
-.hidden-cart{
-  display: none;
+  font-size: 17px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.informacion button:hover{
+  background-color: #2D4263;
 }
 
 /* Estilos para los menús */
