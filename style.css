@@ -28,6 +28,7 @@ h2 {
   position: absolute;
   top: 50px;
   right: 10px;
+  
   background-color: white;
   padding: 10px;
   border: 1px solid #ccc;
@@ -35,19 +36,23 @@ h2 {
 
 #cart-content h3 {
   margin-top: 0;
+  color:#141C29;
 }
 
 #cart-items {
   list-style-type: none;
   padding: 0;
+  color:#141C29;
 }
 
 #cart-items li {
   margin-bottom: 10px;
+  color:#141C29;
 }
 
 #cart-total {
   font-weight: bold;
+  color:#141C29;
 }
 /* Estilos para los menús */
 
