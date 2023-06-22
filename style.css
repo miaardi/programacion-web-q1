@@ -36,23 +36,23 @@ h2 {
 
 #cart-content h3 {
   margin-top: 0;
-  color:#141C29;
+  color:#333;
 }
 
 #cart-items {
   list-style-type: none;
   padding: 0;
-  color:#141C29;
+  color:#333;
 }
 
 #cart-items li {
   margin-bottom: 10px;
-  color:#141C29;
+  color:#333;
 }
 
 #cart-total {
   font-weight: bold;
-  color:#141C29;
+  color:#333;
 }
 /* Estilos para los menús */
 
