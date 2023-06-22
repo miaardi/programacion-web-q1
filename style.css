@@ -55,7 +55,14 @@ h2 {
 }
 
 
-
+#checkout-button {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 2vh 5vw;
+  text-decoration: none;
+  background-color: #333
+}
 
 .menu-container {
   display: flex;
