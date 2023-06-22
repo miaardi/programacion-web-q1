@@ -38,7 +38,7 @@ function renderCart() {
       });
 
       // Calculate and display cart total
-      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      const total = cart.reduce((acc, item) => acc + itemPrice, 0);
       cartTotal.textContent = `Total: $${total}`;
    }
 }
