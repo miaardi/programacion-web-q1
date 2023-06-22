@@ -24,41 +24,7 @@ h2 {
 }
 
 /* Estilos para el carrito de compras */
-.informacion{
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap:15px;
-}
-.informacion>p:first-child{
-  font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
-  font-weight: 300;
-}
-.informacion .precio {
-  font-size: 20px;
-  font-weight: 500;
-}
-.informacion .precio span{
-  font-size: 17px;
-  font-weight: 300;
-}
-.informacion button{
-  background-color: #263143;
-  width: 100px;
-  height: 35px;
-  border-radius: 10px;
-  border: none;
 
-  font-size: 17px;
-  font-weight: 300;
-  cursor: pointer;
-}
-.informacion button:hover{
-  background-color: #2D4263;
-}
 
 /* Estilos para los menús */
 .menu-container {
