@@ -24,16 +24,25 @@ h2 {
 }
 
 /* Estilos para el carrito de compras */
+.cart-icon a {
+  position: relative;
+  display: inline-block;
+}
 
-header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap:15%;
-  height: 70px;
-  top: 0;
-  position: fixed;
-  width: 100%;
+.cart-icon i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
 }
 /* Estilos para los menús */
 

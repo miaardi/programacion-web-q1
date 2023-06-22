@@ -1,11 +1,10 @@
-const cart = document.querySelector("#cart");
-const contenedor = document.querySelector("#menu-conteiner");
-const body = document.querySelector("body");
-window.addEventListener("scroll", function(){
-    if(contenedor.getBoundingClientRect().top<10){
-        cart.classList.add("scroll")
-    }
-    else{
-        cart.classList.remove("scroll")
-    }
-})
+// Function to handle cart button click
+function handleCartButtonClick() {
+    // Add your cart functionality here
+    // For example, show a modal or navigate to the cart page
+    console.log('Cart button clicked!');
+ }
+ 
+ // Event listener for cart button
+ const cartButton = document.getElementById('cart-button');
+ cartButton.addEventListener('click', handleCartButtonClick);
