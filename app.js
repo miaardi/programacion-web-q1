@@ -1,4 +1,4 @@
-const cart = document.querySelector("#cart");
+const header = document.querySelector("#header");
 const contenedor = document.querySelector("#menu-conteiner");
 const body = document.querySelector("body");
 window.addEventListener("scroll", function(){
