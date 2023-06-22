@@ -23,26 +23,31 @@ h2 {
   color: #141C29;
 }
 
-/* Estilos para el carrito de compras */
-.cart-icon a {
-  position: relative;
-  display: inline-block;
-}
-
-.cart-icon i {
-  font-size: 20px;
-  vertical-align: middle;
-}
-
-.cart-badge {
+/* Styles for the cart content */
+#cart-content {
   position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  padding: 2px 5px;
-  border-radius: 50%;
+  top: 50px;
+  right: 10px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+#cart-content h3 {
+  margin-top: 0;
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+#cart-items li {
+  margin-bottom: 10px;
+}
+
+#cart-total {
+  font-weight: bold;
 }
 /* Estilos para los menús */
 
