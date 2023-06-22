@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOERU</title>
+    <title>KORU</title>
     <link rel="stylesheet" href="style.css">
   </head>
   
@@ -14,11 +14,9 @@
           <li class="navli"><a href='#menus'>Menú</a></li>
           <li class="navli"><a href="#CONT" >Contacto</a></li>
           <li class="navli"><a href="#fotolocal" >Locales</a></li>
-          <li class="navli"><a></a> <button id="cart-button">Carrito</button>
-          </a></li>
+          <li class="navli"style="float:right"><a class="active" href="#about">Sobre nosotros</a></li>
         </ul>
     </header>
-
     <main>
       <h1 id="titulogrande">KOERU</h1>
       <h2 id="menus">Menú del día</h2>
@@ -28,7 +26,21 @@
         <p id="cart-total">Total: $0</p>
       </div>
       
-   
+      <div class="menu-container">
+        <div class="menu">
+          <h2>Menú 1</h2>
+          <img src="./fotos/FOTO SUSHI2.jpeg" alt="Menú 1" class="menu-image">
+          <p>Precio: $1000</p>
+          <button id='agregaralcarrito' onclick="agregarAlCarrito(1000)" >Agregar al carrito</button>
+        </div>
+        
+        <div class="menu">
+          <h2>Menú 2</h2>
+          <img src="./fotos/FOT SUSHI1.jpg" alt="Menú 2" class="menu-image">
+          <p>Precio: $1500</p>
+          <button id='agregaralcarrito' onclick="agregarAlCarrito(1500)">Agregar al carrito</button>
+        </div>
+      </div>
     
     
 
