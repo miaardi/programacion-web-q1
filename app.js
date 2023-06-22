@@ -1,6 +1,6 @@
 // Function to handle cart button click
 function handleCartButtonClick() {
-    const header = document.querySelector("#header");
+    const header = document.querySelector("#cart-button");
 const contenedor = document.querySelector("#contenedor");
 const body = document.querySelector("body");
 window.addEventListener("scroll", function(){
