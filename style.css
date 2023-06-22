@@ -19,6 +19,7 @@ h2 {
 .scroll img{
   filter: invert(15%);
 }           
+
 .scroll h1{
   color: #141C29;
 }
@@ -28,8 +29,16 @@ h2 {
 
 /* Estilos para los menús */
 
-.compras button:active
-
+.carrito{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:15%;
+  height: 70px;
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
 
 .menu-container {
   display: flex;
