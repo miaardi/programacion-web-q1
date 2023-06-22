@@ -1,13 +1,13 @@
-// Variables for cart functionality
+// Variables para la funcionalidad del carrito
 const cartButton = document.getElementById('cart-button');
 const cartContent = document.getElementById('cart-content');
 const cartItems = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
 let cart = [];
 
-// Function to handle cart button click
+// Función para manejar el clic en el botón del carrito
 function handleCartButtonClick() {
-   // Toggle cart content visibility
+   // Alternar la visibilidad del contenido del carrito
    if (cartContent.style.display === 'block') {
       cartContent.style.display = 'none';
    } else {
@@ -16,46 +16,46 @@ function handleCartButtonClick() {
    }
 }
 
-// Function to render the cart content
+// Función para renderizar el contenido del carrito
 function renderCart() {
-   // Clear previous cart items
+   // Limpiar los elementos del carrito previos
    cartItems.innerHTML = '';
 
    if (cart.length === 0) {
-      // Display "carrito vacío" message
+      // Mostrar el mensaje "carrito vacío"
       const emptyCartMessage = document.createElement('li');
       emptyCartMessage.textContent = 'Carrito vacío';
       cartItems.appendChild(emptyCartMessage);
 
-      // Clear cart total
+      // Limpiar el total del carrito
       cartTotal.textContent = '';
    } else {
-      // Render each item in the cart
+      // Renderizar cada elemento del carrito
       cart.forEach(item => {
          const cartItem = document.createElement('li');
-         cartItem.textContent = item.name;
+         cartItem.textContent = `${item.name} - Precio: $${item.price}`;
          cartItems.appendChild(cartItem);
       });
 
-      // Calculate and display cart total
-      const total = cart.reduce((acc, item) => acc + itemPrice, 0);
+      // Calcular y mostrar el total del carrito
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
       cartTotal.textContent = `Total: $${total}`;
    }
 }
 
-// Function to handle "Comprar" button click
+// Función para manejar el clic en el botón "Comprar"
 function handleBuyButtonClick(name, price) {
-   // Add item to the cart
+   // Agregar el producto al carrito
    cart.push({ name, price });
 
-   // Render the updated cart
+   // Renderizar el carrito actualizado
    renderCart();
 }
 
-// Event listeners
+// Listeners de eventos
 cartButton.addEventListener('click', handleCartButtonClick);
 
-// Example "Comprar" buttons for products
+// Ejemplo de botones "Comprar" para los productos
 const buyButtons = document.getElementsByClassName('buy-button');
 for (let i = 0; i < buyButtons.length; i++) {
    const button = buyButtons[i];
