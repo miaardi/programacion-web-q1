@@ -66,32 +66,3 @@ for (let i = 0; i < buyButtons.length; i++) {
       handleBuyButtonClick(itemName, itemPrice);
    });
 }
-
- // Función para enviar el carrito por correo electrónico
- function sendCartByEmail() {
-    const formData = new FormData();
-    formData.append('cartItems', JSON.stringify(cartItems));
-    formData.append('cartTotal', cartTotal);
-
-    fetch('enviar_correo.php', {
-        method: 'POST',
-        body: formData
-    })
-        .then(response => {
-            if (response.ok) {
-                alert('La compra ha sido enviada por correo electrónico.');
-            } else {
-                alert('Error al enviar la compra por correo electrónico.');
-            }
-        })
-        .catch(error => {
-            console.log('Error al enviar la compra por correo electrónico:', error);
-        });
-}
-
-// Agregar evento al formulario de finalizar compra
-checkoutForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    sendCartByEmail()
-
-})
