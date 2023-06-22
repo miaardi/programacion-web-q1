@@ -27,13 +27,18 @@ h2 {
 
 
 /* Estilos para los menús */
+
+.compras button:active
+
+
 .menu-container {
   display: flex;
   color:#f5f5f5;
   justify-content: space-between;
 }
 
-.menu {
+.menu 
+{
   flex-basis: 45%;
   
   color:#f5f5f5;
