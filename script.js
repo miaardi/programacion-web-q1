@@ -67,34 +67,31 @@ for (let i = 0; i < buyButtons.length; i++) {
    });
 }
 
-// Obtener referencia al botón "Finalizar compra"
-const checkoutButton = document.getElementById("checkout-button");
+ // Función para enviar el carrito por correo electrónico
+ function sendCartByEmail() {
+    const formData = new FormData();
+    formData.append('cartItems', JSON.stringify(cartItems));
+    formData.append('cartTotal', cartTotal);
 
-// Agregar evento click al botón "Finalizar compra"
-checkoutButton.addEventListener("click", generarPDF);
-
-// Función para generar el PDF con los datos de compra
-function generarPDF() {
-   // Obtener los datos de compra
-   const cartItems = document.getElementById("cart-items").getElementsByTagName("li");
-   const cartTotal = document.getElementById("cart-total").textContent;
-   
-   // Crear contenido del PDF
-   const contenidoPDF = `Datos de compra:\n\n`;
-   contenidoPDF += `Ítems:\n`;
-   for (let i = 0; i < cartItems.length; i++) {
-      contenidoPDF += `${i + 1}. ${cartItems[i].textContent}\n`;
-   }
-   contenidoPDF += `\nTotal: ${cartTotal}`;
-   
-   // Crear objeto PDF
-   const pdf = new Blob([contenidoPDF], { type: "application/pdf" });
-   
-   // Crear enlace para descargar el PDF
-   const enlaceDescarga = document.createElement("a");
-   enlaceDescarga.href = URL.createObjectURL(pdf);
-   enlaceDescarga.download = "compra.pdf";
-   
-   // Simular clic en el enlace de descarga para iniciar la descarga del PDF
-   enlaceDescarga.click();
+    fetch('enviar_correo.php', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => {
+            if (response.ok) {
+                alert('La compra ha sido enviada por correo electrónico.');
+            } else {
+                alert('Error al enviar la compra por correo electrónico.');
+            }
+        })
+        .catch(error => {
+            console.log('Error al enviar la compra por correo electrónico:', error);
+        });
 }
+
+// Agregar evento al formulario de finalizar compra
+checkoutForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    sendCartByEmail()
+
+})
