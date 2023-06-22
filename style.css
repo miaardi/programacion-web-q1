@@ -56,7 +56,7 @@ h2 {
 /* Estilos para las imágenes */
 .menu-image {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
   margin-bottom: 10px;
 }
