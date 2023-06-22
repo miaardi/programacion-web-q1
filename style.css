@@ -12,22 +12,12 @@ h2 {
 }
 
 
-.scroll{
-  background-color: aliceblue;
-  box-shadow: .1rem .2rem .3rem #333;
-}
-.scroll img{
-  filter: invert(15%);
-}           
-.scroll h1{
-  color: #141C29;
-}
-
 /* Styles for the cart content */
 #cart-content {
   position: absolute;
   top: 50px;
   right: 10px;
+  color:#333;
   
   background-color: white;
   padding: 10px;
