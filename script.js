@@ -8,7 +8,7 @@ let cart = [];
 
 // Función para manejar el clic en el botón del carrito
 function handleCartButtonClick() {
-   // Alternar la visibilidad del contenido del carrito
+   
    if (cartContent.style.display === 'block') {
       cartContent.style.display = 'none';
    } else {
@@ -79,19 +79,7 @@ for (let i = 0; i < buyButtons.length; i++) {
       // Eliminar el elemento del carrito
       var cartItem = this.parentNode;
       cartItem.parentNode.removeChild(cartItem);
-
-      // Aquí puedes realizar cualquier otra acción que necesites, como actualizar el total del carrito, etc.
-
-      // Llamar a una función para realizar alguna acción adicional, como enviar una solicitud al servidor para actualizar el carrito en la base de datos
-      eliminarProductoDelCarrito(productId);
     });
-  }
-
-  // Función para eliminar un producto del carrito en el servidor
-  function eliminarProductoDelCarrito(productId) {
-    // Realizar una solicitud al servidor para eliminar el producto del carrito
-    // Puedes usar AJAX, Fetch API u otras técnicas para enviar la solicitud al servidor
-    // Aquí puedes implementar tu lógica para eliminar el producto del carrito en el servidor
   }
 
   document.getElementById("checkout-button").addEventListener("click", function() {
@@ -99,20 +87,36 @@ for (let i = 0; i < buyButtons.length; i++) {
     var form = document.createElement("form");
     form.action = "https://formsubmit.co/ardissonemia@gmail.com";
     form.method = "POST";
-
-    // Agregar campos al formulario
+  
+    // Agregar campo de nombre
+    var nameInput = document.createElement("input");
+    nameInput.type = "text";
+    nameInput.name = "name";
+    nameInput.placeholder = "Nombre";
+    nameInput.required = true;
+    form.appendChild(nameInput);
+  
+    // Agregar campo de apellido
+    var lastNameInput = document.createElement("input");
+    lastNameInput.type = "text";
+    lastNameInput.name = "last_name";
+    lastNameInput.placeholder = "Apellido";
+    lastNameInput.required = true;
+    form.appendChild(lastNameInput);
+  
+    // Agregar campo de correo electrónico
     var emailInput = document.createElement("input");
     emailInput.type = "email";
     emailInput.name = "email";
     emailInput.placeholder = "Correo electrónico";
     emailInput.required = true;
     form.appendChild(emailInput);
+  
 
-    // Agregar otros campos al formulario según tus necesidades
-
+  
     // Agregar el formulario a la página
     document.body.appendChild(form);
-
+  
     // Enviar el formulario automáticamente
     form.submit();
   });
