@@ -6,6 +6,24 @@
   #titulogrande{text-align: center;margin: 0vh;font: 'Lucida Handwriting';display:block;background-image: url("./fotos/FOTO TIT.png");background-size: cover;color:lightgray;font-size: 15%; padding-top: 30% ; padding-bottom: 30%;}
 
 
+  .floating-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+  
+  .floating-form input {
+    margin-bottom: 10px;
+  }
+  
+  .floating-form button {
+    margin-top: 10px;
+  }
 
 
   #cart-content {
@@ -50,7 +68,116 @@
     height: auto;
     width: 100%;
   }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20%;
+    background-color: #333;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #f5f5f5;
+  }
+  
+/*BARRA MENU*/
+.active {
+  background-color: #04AA6D;
 }
+
+#navul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  
+}
+
+.navli {
+  float: left;
+  background-color: #333
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 2% 5%;
+  text-decoration: none;
+  background-color: #333
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+
+#contacto {
+  
+  text-decoration: none;
+  color:white
+}
+
+
+#CONT{
+color: white;
+}
+
+
+.location-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  background-color: white;
+  justify-content: space-around;
+}
+
+.location {
+  text-decoration: none;
+  margin-bottom: 30%;
+  background-color: white;
+}
+
+.map {
+  
+  height: 2%;
+  width: 2%;
+  background-color: white;
+  padding-right: 60%;
+  padding-top: 3%;
+  
+}
+
+.ubicacion {
+  background-color: white;
+  color:#333;
+  font: 'Lucida Handwriting';
+  font-size: 3%;
+  text-decoration: none;
+  
+}
+
+.imagen {
+height: 25%vh;
+  width: 20%;
+}
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 
 /* Media queries for desktop screens */
 @media (min-width: 768px) {
