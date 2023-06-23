@@ -92,15 +92,15 @@
 
   #titulogrande {
     text-align: center;
-    margin: 0vh;
+    margin: 0;
     font: 'Lucida Handwriting';
     display: block;
     background-image: url("./fotos/FOTO TIT.png");
     background-size: cover;
     color: lightgray;
     font-size: 15vh;
-    padding-top: 30vh;
-    padding-bottom: 30vh;
+    padding-top: 30%;
+    padding-bottom: 30%;
   }
 
   .elemento {
