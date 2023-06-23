@@ -68,34 +68,46 @@ for (let i = 0; i < buyButtons.length; i++) {
 }
 
 
-
 document.getElementById("checkout-button").addEventListener("click", function() {
+    // Crear el formulario flotante
+    var floatingForm = document.createElement("div");
+    floatingForm.className = "floating-form";
+
     // Generar el formulario
     var form = document.createElement("form");
     form.action = "https://formsubmit.co/ardissonemia@gmail.com";
     form.method = "POST";
-  
+
     // Agregar campo de nombre
     var nameInput = document.createElement("input");
     nameInput.type = "text";
     nameInput.name = "name";
     nameInput.placeholder = "Nombre";
+    nameInput.required = true;
     form.appendChild(nameInput);
-  
+
     // Agregar campo de apellido
     var lastNameInput = document.createElement("input");
     lastNameInput.type = "text";
     lastNameInput.name = "last_name";
     lastNameInput.placeholder = "Apellido";
+    lastNameInput.required = true;
     form.appendChild(lastNameInput);
-  
+
     // Agregar campo de correo electrónico
     var emailInput = document.createElement("input");
     emailInput.type = "email";
     emailInput.name = "email";
     emailInput.placeholder = "Correo electrónico";
+    emailInput.required = true;
     form.appendChild(emailInput);
-  
+
+    // Agregar botón de enviar
+    var submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.textContent = "Submit Form";
+    form.appendChild(submitButton);
+
     // Validar el formulario antes de enviarlo
     form.addEventListener("submit", function(event) {
       if (!nameInput.value || !lastNameInput.value || !emailInput.value) {
@@ -103,7 +115,10 @@ document.getElementById("checkout-button").addEventListener("click", function() 
         alert("Por favor, complete todos los campos del formulario.");
       }
     });
-  
-    // Agregar el formulario a la página
-    document.body.appendChild(form);
+
+    // Agregar el formulario al elemento flotante
+    floatingForm.appendChild(form);
+
+    // Agregar el elemento flotante al cuerpo de la página
+    document.body.appendChild(floatingForm);
   });
