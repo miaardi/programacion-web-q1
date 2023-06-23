@@ -31,53 +31,18 @@ function renderCart() {
       // Limpiar el total del carrito
       cartTotal.textContent = '';
    } else {
-// Función para renderizar el contenido del carrito
-function renderCart() {
-    // Limpiar los elementos del carrito previos
-    cartItems.innerHTML = '';
- 
-    if (cart.length === 0) {
-       // Mostrar el mensaje "carrito vacío"
-       const emptyCartMessage = document.createElement('li');
-       emptyCartMessage.textContent = 'Carrito vacío';
-       cartItems.appendChild(emptyCartMessage);
- 
-       // Limpiar el total del carrito
-       cartTotal.textContent = '';
-    } else {
-       // Renderizar cada elemento del carrito
-       cart.forEach(item => {
-          const cartItem = document.createElement('li');
-          cartItem.classList.add('cart-item');
- 
-          const itemName = document.createElement('span');
-          itemName.textContent = `${item.name} - Precio: $${item.price}`;
- 
-          const deleteButton = document.createElement('button');
-          deleteButton.classList.add('delete-button');
-          deleteButton.textContent = 'Eliminar';
- 
-          // Evento de clic para el botón "Eliminar"
-          deleteButton.addEventListener('click', function() {
-             // Obtener el índice del elemento a eliminar
-             const index = cart.indexOf(item);
-             if (index > -1) {
-                cart.splice(index, 1);
-                renderCart();
-             }
-          });
- 
-          // Agregar elementos al carrito
-          cartItem.appendChild(itemName);
-          cartItem.appendChild(deleteButton);
-          cartItems.appendChild(cartItem);
-       });
- 
-       // Calcular y mostrar el total del carrito
-       const total = cart.reduce((acc, item) => acc + item.price, 0);
-       cartTotal.textContent = `Total: $${total}`;
-    }
- }
+      // Renderizar cada elemento del carrito
+      cart.forEach(item => {
+         const cartItem = document.createElement('li');
+         cartItem.textContent = `${item.name} - Precio: $${item.price}`;
+         cartItems.appendChild(cartItem);
+      });
+
+      // Calcular y mostrar el total del carrito
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      cartTotal.textContent = `Total: $${total}`;
+   }
+}
 
 // Función para manejar el clic en el botón "Comprar"
 function handleBuyButtonClick(name, price) {
@@ -103,7 +68,8 @@ for (let i = 0; i < buyButtons.length; i++) {
 }
 
 
-document.getElementById("checkout-button").addEventListener("click", function() {
+
+  document.getElementById("checkout-button").addEventListener("click", function() {
     // Generar el formulario
     var form = document.createElement("form");
     form.action = "https://formsubmit.co/ardissonemia@gmail.com";
@@ -133,9 +99,11 @@ document.getElementById("checkout-button").addEventListener("click", function() 
     emailInput.required = true;
     form.appendChild(emailInput);
   
+
+  
     // Agregar el formulario a la página
     document.body.appendChild(form);
   
     // Enviar el formulario automáticamente
     form.submit();
-})}}
+  });
