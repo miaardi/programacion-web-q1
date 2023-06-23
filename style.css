@@ -86,11 +86,24 @@
   float: none;
   display: block;
   text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 1vh 0;
 }
 
 li a {
   padding: 2vh 3vw;
+  border-bottom: 1px solid #777;
 }
+
+#navul {
+  background-color: #555;
+}
+
+.active {
+  background-color: #777;
+}
+
 }
 
 
