@@ -69,7 +69,7 @@ for (let i = 0; i < buyButtons.length; i++) {
 
 
 
-  document.getElementById("checkout-button").addEventListener("click", function() {
+document.getElementById("checkout-button").addEventListener("click", function() {
     // Generar el formulario
     var form = document.createElement("form");
     form.action = "https://formsubmit.co/ardissonemia@gmail.com";
@@ -80,7 +80,6 @@ for (let i = 0; i < buyButtons.length; i++) {
     nameInput.type = "text";
     nameInput.name = "name";
     nameInput.placeholder = "Nombre";
-    nameInput.required = true;
     form.appendChild(nameInput);
   
     // Agregar campo de apellido
@@ -88,7 +87,6 @@ for (let i = 0; i < buyButtons.length; i++) {
     lastNameInput.type = "text";
     lastNameInput.name = "last_name";
     lastNameInput.placeholder = "Apellido";
-    lastNameInput.required = true;
     form.appendChild(lastNameInput);
   
     // Agregar campo de correo electrónico
@@ -96,14 +94,16 @@ for (let i = 0; i < buyButtons.length; i++) {
     emailInput.type = "email";
     emailInput.name = "email";
     emailInput.placeholder = "Correo electrónico";
-    emailInput.required = true;
     form.appendChild(emailInput);
   
-
+    // Validar el formulario antes de enviarlo
+    form.addEventListener("submit", function(event) {
+      if (!nameInput.value || !lastNameInput.value || !emailInput.value) {
+        event.preventDefault(); // Evitar el envío del formulario si faltan campos requeridos
+        alert("Por favor, complete todos los campos del formulario.");
+      }
+    });
   
     // Agregar el formulario a la página
     document.body.appendChild(form);
-  
-    // Enviar el formulario automáticamente
-    form.submit();
   });
