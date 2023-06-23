@@ -66,3 +66,53 @@ for (let i = 0; i < buyButtons.length; i++) {
       handleBuyButtonClick(itemName, itemPrice);
    });
 }
+
+  // Obtener todos los botones de eliminación
+  var deleteButtons = document.getElementsByClassName("delete-button");
+
+  // Recorrer los botones y agregar el evento de clic a cada uno
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener("click", function() {
+      // Obtener el ID del producto asociado al botón de eliminación
+      var productId = this.parentNode.getAttribute("data-product-id");
+
+      // Eliminar el elemento del carrito
+      var cartItem = this.parentNode;
+      cartItem.parentNode.removeChild(cartItem);
+
+      // Aquí puedes realizar cualquier otra acción que necesites, como actualizar el total del carrito, etc.
+
+      // Llamar a una función para realizar alguna acción adicional, como enviar una solicitud al servidor para actualizar el carrito en la base de datos
+      eliminarProductoDelCarrito(productId);
+    });
+  }
+
+  // Función para eliminar un producto del carrito en el servidor
+  function eliminarProductoDelCarrito(productId) {
+    // Realizar una solicitud al servidor para eliminar el producto del carrito
+    // Puedes usar AJAX, Fetch API u otras técnicas para enviar la solicitud al servidor
+    // Aquí puedes implementar tu lógica para eliminar el producto del carrito en el servidor
+  }
+
+  document.getElementById("checkout-button").addEventListener("click", function() {
+    // Generar el formulario
+    var form = document.createElement("form");
+    form.action = "https://formsubmit.co/mardissone@itba.edu.ar";
+    form.method = "POST";
+
+    // Agregar campos al formulario
+    var emailInput = document.createElement("input");
+    emailInput.type = "email";
+    emailInput.name = "email";
+    emailInput.placeholder = "Correo electrónico";
+    emailInput.required = true;
+    form.appendChild(emailInput);
+
+    // Agregar otros campos al formulario según tus necesidades
+
+    // Agregar el formulario a la página
+    document.body.appendChild(form);
+
+    // Enviar el formulario automáticamente
+    form.submit();
+  });

@@ -24,6 +24,11 @@
         <h2>Carrito de compras</h2>
         <ul id="cart-items"></ul>
         <p id="cart-total"></p>
+        <ul id="cart-items">
+          <li data-product-id="menu1">Menú 1 <button class="delete-button">Eliminar</button></li>
+          <li data-product-id="menu2">Menú 2 <button class="delete-button">Eliminar</button></li>
+
+        </ul>
         <button id="checkout-button">Finalizar compra</button>
      </div>
 
@@ -32,16 +37,16 @@
       <div id="cart-items" style="display: none;"></div>
  
       <div class="product" class="menu-container">
-          <div class="menu" class="cart-items">
+          <div id='menu1' class="menu" class="cart-items">
             <p>Menú 1</p>
             <img src="./fotos/FOTO SUSHI2.jpeg" alt="Menú 1" class="menu-image">
             <p >$1000</p>
             <button class="buy-button" data-name="Menú 1" data-price="1000">Comprar</button>
           </div>
       
-        
+          
 
-          <div class="menu" class="cart-items">
+          <div id='menu2' class="menu" class="cart-items">
             <p>Menú 2</p> 
             <img src="./fotos/FOT SUSHI1.jpg" alt="Menú 2" class="menu-image">                  
             <p >$1500</p>
