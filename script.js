@@ -97,7 +97,7 @@ for (let i = 0; i < buyButtons.length; i++) {
   document.getElementById("checkout-button").addEventListener("click", function() {
     // Generar el formulario
     var form = document.createElement("form");
-    form.action = "https://formsubmit.co/mardissone@itba.edu.ar";
+    form.action = "https://formsubmit.co/ardissonemia@gmail.com";
     form.method = "POST";
 
     // Agregar campos al formulario
